@@ -1,7 +1,7 @@
 name "jmxfetch"
 
 if windows?
-  default_version "0.26.3"
+  default_version "0.34.0"
 else
   jmx_version = ENV["JMX_VERSION"]
   if jmx_version.nil? || jmx_version.empty?
@@ -11,36 +11,8 @@ else
   end
 end
 
-version "0.26.3" do
-  source sha256: "611d3ba111f0e2b45ce364409cd291d2b5ab68906b378123b7ecf895c2a7a565"
-end
-
-version "0.26.2" do
-  source sha256: "9a2726d1cd7972e129d96d05d1e81bd2d8f0d2fc93aff18137dc25b1bbafff47"
-end
-
-version "0.26.1" do
-  source sha256: "e25fdb6173ea357d6c161228bba7a4c0b60151c89e1bb094f17850d475e4616e"
-end
-
-version "0.26.0" do
-  source sha256: "dfdc5df770b4565763a3de65df8ecfb91b48d9172bd7cbf085607d892d75a52e"
-end
-
-version "0.25.0" do
-  source sha256: "e653086523c93faf8a0b189a0e3aa2cd5f21d5bc6bbd19c279372dbdc6972dea"
-end
-
-version "0.24.1" do
-  source sha256: "244cdcec15efb9fc9923a868787d3e6a2dad95e169dbee4cb7fe6d122d5109cf"
-end
-
-version "0.24.0" do
-  source sha256: "819bb28d81de591ce3e89a01302ccdde0f01c5ee782a82c83af18bd7174dc32e"
-end
-
-version "0.23.0" do
-  source sha256: "b11f914388128791821380603a06ade9c95b3bbe02be40ebaa8e4edae53d7695"
+version "0.34.0" do
+  source sha256: "b5c053b960f9fa949a76ec3b84c308586c409f956379481e6a0044867deb7b52"
 end
 
 jar_dir = "#{install_dir}/agent/checks/libs"
