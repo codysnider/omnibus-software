@@ -57,8 +57,6 @@ build do
     env["CFLAGS"] = "-I#{install_dir}/embedded/include"
     env["CPPFLAGS"] = env["CFLAGS"]
     env["CXXFLAGS"] = env["CFLAGS"]
-  elsif linux?
-    env = with_glibc_version(env)
   end
 
   configure_args = [
@@ -137,6 +135,11 @@ build do
   configure_command = configure_args.unshift(configure_cmd).join(" ")
 
   command configure_command, env: env, in_msys_bash: true
+
+  if linux?
+    env = with_glibc_version(env)
+  end
+
   make "depend", env: env
   # make -j N on openssl is not reliable
   make env: env
